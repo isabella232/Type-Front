@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
 import { toggleScanHelpInformation, hideScanHelpInformation } from '../../actions/AppActions'
 
@@ -15,7 +16,7 @@ class ScanPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page__scan">
         <h1>Scan Page</h1>
 
         <ScanQRCode />
@@ -23,15 +24,21 @@ class ScanPage extends Component {
         <a href="#" onClick={ e => this.handleClick(e) }>Need Help</a>
 
         <ScanHelpInfomation data={ this.props.data.scanReducer } />
+
+        <br />
+        <br />
+        <Link to="/grids">
+          View grids
+        </Link>
       </div>
-    );
+    )
   }
 }
 
 function select(state) {
   return {
     data: state
-  };
+  }
 }
 
-export default connect(select)(ScanPage);
+export default connect(select)(ScanPage)
