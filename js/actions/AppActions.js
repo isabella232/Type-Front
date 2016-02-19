@@ -28,6 +28,7 @@
 /* eslint-disable no-use-before-define */
 
 import { CHANGE_OWNER_NAME, CHANGE_PROJECT_NAME } from '../constants/AppConstants';
+import { TOGGLE_SCAN_HELP_INFORMATION, HIDE_SCAN_HELP_INFORMATION } from '../constants/AppConstants';
 
 export function asyncChangeProjectName(name) {
   return (dispatch) => {
@@ -53,4 +54,12 @@ export function changeProjectName(name) {
 
 export function changeOwnerName(name) {
   return { type: CHANGE_OWNER_NAME, name };
+}
+
+export function toggleScanHelpInformation() {
+  return { type: TOGGLE_SCAN_HELP_INFORMATION };
+}
+
+export function hideScanHelpInformation() {
+  return { type: HIDE_SCAN_HELP_INFORMATION };
 }
