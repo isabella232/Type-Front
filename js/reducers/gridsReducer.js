@@ -13,28 +13,30 @@
  * add it in the rootReducer.js.
  */
 
-import { CHANGE_OWNER_NAME, CHANGE_PROJECT_NAME } from '../constants/AppConstants';
+import { READY_IMPORT_DIARIES, CANCEL_IMPORT_DIARIES } from '../constants/AppConstants';
 import assignToEmpty from '../utils/assign';
 
 const initialState = {
-  projectName: 'React.js Boilerplate',
-  ownerName: 'mxstbr'
+  showPopup: false,
+  grids: []
 };
 
-function homeReducer(state = initialState, action) {
+function gridsReducer(state = initialState, action) {
   Object.freeze(state); // Don't mutate state directly, always use assign()!
   switch (action.type) {
-    case CHANGE_OWNER_NAME:
+    case READY_IMPORT_DIARIES:
       return assignToEmpty(state, {
-        ownerName: action.name
+        showPopup: true
+        //showInfo: !state.showInfo
       });
-    case CHANGE_PROJECT_NAME:
+    case CANCEL_IMPORT_DIARIES:
       return assignToEmpty(state, {
-        projectName: action.name
+        //showInfo: false
+        showPopup: false
       });
     default:
       return state;
   }
 }
 
-export default homeReducer;
+export default gridsReducer;

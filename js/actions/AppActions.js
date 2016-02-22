@@ -27,8 +27,12 @@
 // It makes more sense to have the asnyc actions before the non-async ones
 /* eslint-disable no-use-before-define */
 
-import { CHANGE_OWNER_NAME, CHANGE_PROJECT_NAME } from '../constants/AppConstants';
-import { TOGGLE_SCAN_HELP_INFORMATION, HIDE_SCAN_HELP_INFORMATION } from '../constants/AppConstants';
+import {
+  TOGGLE_SCAN_HELP_INFORMATION,
+  HIDE_SCAN_HELP_INFORMATION,
+  READY_IMPORT_DIARIES,
+  CANCEL_IMPORT_DIARIES
+} from '../constants/AppConstants';
 
 export function asyncChangeProjectName(name) {
   return (dispatch) => {
@@ -48,18 +52,20 @@ export function asyncChangeOwnerName(name) {
   };
 }
 
-export function changeProjectName(name) {
-  return { type: CHANGE_PROJECT_NAME, name };
-}
-
-export function changeOwnerName(name) {
-  return { type: CHANGE_OWNER_NAME, name };
-}
-
+// ScanPage
 export function toggleScanHelpInformation() {
-  return { type: TOGGLE_SCAN_HELP_INFORMATION };
+  return { type: TOGGLE_SCAN_HELP_INFORMATION }
 }
 
 export function hideScanHelpInformation() {
-  return { type: HIDE_SCAN_HELP_INFORMATION };
+  return { type: HIDE_SCAN_HELP_INFORMATION }
+}
+
+// GridsPage
+export function readyImportDiaries() {
+  return { type: READY_IMPORT_DIARIES }
+}
+
+export function cancelImportDiaries() {
+  return { type: CANCEL_IMPORT_DIARIES }
 }

@@ -27,7 +27,7 @@ class App extends Component {
 function select(state) {
   return {
     data: state
-  };
+  }
 }
 
 // Wrap the component to inject dispatch and state into it

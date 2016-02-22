@@ -8,10 +8,9 @@ import ScanHelpInfomation from '../parts/ScanPage/ScanHelpInformation.react.js'
 import ScanQRCode from '../parts/ScanPage/ScanQRCode.react.js'
 
 class ScanPage extends Component {
-  handleClick(e) {
+  toggleHelp(e) {
     e.preventDefault()
     this.props.dispatch(toggleScanHelpInformation())
-    console.log(this.props.data)
   }
 
   render() {
@@ -21,7 +20,7 @@ class ScanPage extends Component {
 
         <ScanQRCode />
 
-        <a href="#" onClick={ e => this.handleClick(e) }>Need Help</a>
+        <a href="#" onClick={ e => this.toggleHelp(e) }>Need Help</a>
 
         <ScanHelpInfomation data={ this.props.data.scanReducer } />
 
