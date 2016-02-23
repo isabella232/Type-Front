@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class ScanHelpInformation extends Component {
   render() {
-    let show = this.props.data.scanReducer.showInfo ? 'show' : 'hide'
+    let show = this.props.data.scanReducer.showInfo ? 'info-panel--show' : 'info-panel--hide'
     return (
       <div className={show + ' info-panel'}>
         <strong>Instructions:</strong>
