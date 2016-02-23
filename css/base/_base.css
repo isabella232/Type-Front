@@ -24,9 +24,9 @@ body {
 }
 
 body {
-	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: $c-black;
+  font-size: $fs-normal;
 }
 
-body.js-open-sans-loaded {
-	font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
-}

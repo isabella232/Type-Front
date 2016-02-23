@@ -2,33 +2,30 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
-import { toggleScanHelpInformation, hideScanHelpInformation } from '../../actions/AppActions'
 
-import ScanHelpInfomation from '../parts/ScanPage/ScanHelpInformation.react.js'
-import ScanQRCode from '../parts/ScanPage/ScanQRCode.react.js'
+import ScanHelpButton from '../parts/ScanPage/ScanHelpButton.react'
+import ScanHelpInfomation from '../parts/ScanPage/ScanHelpInformation.react'
+import ScanQRCode from '../parts/ScanPage/ScanQRCode.react'
+
+import Logo from '../../../img/logo.png'
 
 class ScanPage extends Component {
-  toggleHelp(e) {
-    e.preventDefault()
-    this.props.dispatch(toggleScanHelpInformation())
-  }
-
   render() {
     return (
       <div className="page__scan">
-        <h1>Scan Page</h1>
+        <div className="video">
+          <iframe src="https://player.vimeo.com/video/104160696?background=1" autoplay="1" loop="1"></iframe>
+        </div>
+        <div className="page__content">
+          <div className="logo">
+            <img src={Logo} />
+          </div>
 
-        <ScanQRCode />
+          <ScanQRCode />
 
-        <a href="#" onClick={ e => this.toggleHelp(e) }>Need Help</a>
-
-        <ScanHelpInfomation data={ this.props.data.scanReducer } />
-
-        <br />
-        <br />
-        <Link to="/grids">
-          View grids
-        </Link>
+          <ScanHelpButton {...this.props} />
+          <ScanHelpInfomation {...this.props} />
+        </div>
       </div>
     )
   }

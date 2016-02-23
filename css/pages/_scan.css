@@ -5,3 +5,107 @@
 .show {
   display: block;
 }
+
+.page__scan .video {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.page__scan .video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.page__scan .page__content {
+  color: $c-white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.page__scan .page__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  background: rgba(0,0,0,.65);
+}
+
+.page__scan .page__content .logo,
+.page__scan .page__content .qrcode,
+.page__scan .page__content .info-btn,
+.page__scan .page__content .info-panel {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.page__scan .page__content .logo {
+  top: 120px;
+}
+
+.page__scan .page__content .logo img {
+  max-width: 200px;
+}
+
+.page__scan .page__content .qrcode {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.page__scan .page__content .info-btn {
+  font-size: $fs-small;
+  bottom: 56px;
+  color: $c-white;
+  text-decoration: none;
+  border-bottom: 1px solid $c-white;
+}
+
+.page__scan .page__content .info-btn img {
+  vertical-align: baseline;
+  width: 8px;
+  margin-right: 8px;
+}
+
+.page__scan .page__content .info-panel {
+  position: fixed;
+  overflow: auto;
+  text-align: left;
+  box-sizing: border-box;
+  width: 460px;
+  padding: 96px 40px 40px 64px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: initial;
+  color: $c-white;
+  transform: none;
+  background: rgba(0,0,0,.5);
+  line-height: 1.5;
+}
+
+.page__scan .page__content .info-panel a {
+  color: $c-active;
+  text-decoration: underline;
+}
+
+.page__scan .page__content .info-panel ol {
+  margin: 0;
+  padding: 0;
+}
