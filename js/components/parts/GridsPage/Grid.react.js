@@ -14,7 +14,7 @@ export default class Grid extends Component {
     return (
       <div
         className={contentEmptyFlag + " grid"}
-        onClick={this.enterGridPage.bind(this, this.props.id)}>
+        onClick={this.enterGridPage.bind(this, this.props.id)}
       >
         <h3>{this.props.title}</h3>
         <p>
