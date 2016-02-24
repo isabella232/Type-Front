@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { cancelImportDiaries } from '../../../actions/AppActions'
 
+import Close from '../../../../img/close.png'
+
 export default class ImportGridsPopup extends Component {
   closePopup(e) {
     e.preventDefault()
@@ -10,13 +12,18 @@ export default class ImportGridsPopup extends Component {
   }
 
   render() {
-    let show = this.props.data.gridsReducer.showPopup ? 'show' : 'hide'
+    let show = this.props.data.gridsReducer.showPopup ? 'mask--show' : 'mask--hide'
     return (
-      <div className={show}>
-        <b>
-          This is the Grids POPUP.
-        </b>
-        <a href="#" onClick={ e => this.closePopup(e) }>Close</a>
+      <div className={ show + ' mask'}>
+        <div className="mask__bg" onClick={ e => this.closePopup(e) }></div>
+        <div className="mask__content">
+          <b>
+            This is the Grids POPUP.
+          </b>
+          <a href="#" onClick={ e => this.closePopup(e) }>
+            <img src={Close} />
+          </a>
+        </div>
       </div>
     )
   }

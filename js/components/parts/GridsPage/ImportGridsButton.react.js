@@ -11,13 +11,7 @@ class ImportGridsButton extends Component {
 
   render() {
     return (
-      <div>
-        <h3>
-          Import Grids
-          <br />
-          <a href="#" onClick={ e => this.readyToImport(e) }>Done</a>
-        </h3>
-      </div>
+      <a href="#" onClick={ e => this.readyToImport(e) }>Done</a>
     )
   }
 }

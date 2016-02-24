@@ -1,0 +1,81 @@
+.page__grids {}
+
+.page__grids header {
+  box-sizing: border-box;
+  height: 120px;
+  overflow: hidden;
+  padding: 20px 24px;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  border-bottom: 1px solid $c-lite-gray;
+  position: relative;
+}
+
+.page__grids .logo img {
+  display: block;
+  width: 223px;
+  float: left;
+}
+
+.page__grids header h1 {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3D(-50%,-50%,0);
+}
+
+.page__grids header a {
+  display: block;
+  float: right;
+  color: $c-white;
+  background: $c-active;
+  border-radius: 10px;
+  width: 192px;
+  height: 48px;
+  margin: 16px 0;
+  line-height: 48px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.page__grids .mask {
+  display: none;
+}
+
+.page__grids .mask.mask--show {
+  display: block;
+}
+
+.page__grids .mask .mask__bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 2;
+}
+
+.page__grids .mask .mask__content {
+  position: absolute;
+  box-sizing: border-box;
+  width: 560px;
+  padding: 56px 0 48px;
+  left: 50%;
+  top: 168px;
+  transform: translateX(-50%);
+  background: $c-white;
+  border-radius: 10px;
+  z-index: 3;
+  text-align: center;
+}
+
+.page__grids .mask .mask__content a {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+.page__grids .mask .mask__content a img {
+  width: 10px;
+}
