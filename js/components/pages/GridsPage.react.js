@@ -21,7 +21,7 @@ class GridsPage extends Component {
           <ImportGridsButton />
         </header>
 
-        <GridsList data={this.props.data.gridsReducer.grids} />
+        <GridsList data={this.props.data.gridsReducer.grids} history={this.props.history} />
 
         <ImportGridsPopup {...this.props} />
       </div>

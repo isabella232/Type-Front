@@ -135,17 +135,17 @@
   text-overflow: ellipsis;
 }
 
-.gridlist .grid span {
+.gridlist .grid > span {
   position: absolute;
   right: 16px;
   bottom: 16px;
 }
 
-.gridlist .grid span img {
+.gridlist .grid > span img {
   dislay: block;
   width: 20px;
 }
 
-.gridlist .grid span.without-image {
+.gridlist .grid > span.without-image {
   display: none;
 }
