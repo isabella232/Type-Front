@@ -8,14 +8,23 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import Logo from '../../img/logo.png';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import { Link } from 'react-router'
 
 class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        {/* <img className="logo" src={Logo} /> */}
-        { this.props.children }
+        <ReactCSSTransitionGroup
+          component="div"
+          transitionName="route-change"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          {React.cloneElement(this.props.children, {
+            key: this.props.location.pathname
+          })}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }

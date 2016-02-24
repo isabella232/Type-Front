@@ -2,21 +2,22 @@
 
 .page__grids header {
   box-sizing: border-box;
-  height: 120px;
+  height: 80px;
   overflow: hidden;
-  padding: 20px 24px;
+  padding: 16px 24px;
   box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
-  border-bottom: 1px solid $c-lite-gray;
   position: relative;
 }
 
 .page__grids .logo img {
   display: block;
-  width: 223px;
+  width: 144px;
   float: left;
 }
 
 .page__grids header h1 {
+  font-size: $fs-title-tiny;
+  font-weight: normal;
   margin: 0;
   position: absolute;
   left: 50%;
@@ -29,11 +30,11 @@
   float: right;
   color: $c-white;
   background: $c-active;
-  border-radius: 10px;
-  width: 192px;
-  height: 48px;
-  margin: 16px 0;
-  line-height: 48px;
+  border-radius: 8px;
+  width: 120px;
+  height: 40px;
+  margin: 4px 0;
+  line-height: 40px;
   text-align: center;
   text-decoration: none;
 }
@@ -65,7 +66,7 @@
   top: 168px;
   transform: translateX(-50%);
   background: $c-white;
-  border-radius: 10px;
+  border-radius: 8px;
   z-index: 3;
   text-align: center;
 }
@@ -78,4 +79,73 @@
 
 .page__grids .mask .mask__content a img {
   width: 10px;
+}
+
+.gridlist {
+  width: 624px;
+  margin: 48px auto 64px;
+}
+
+.gridlist .grid {
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  width: 192px;
+  height: 256px;
+  padding: 16px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  background: $c-white;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+}
+
+.gridlist .grid:hover {
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0,0,0,.8);
+}
+
+.gridlist .grid:nth-child(3n) {
+  margin-right: 0;
+}
+
+.gridlist .grid.empty h3 {
+  color: rgba(74,74,74,.5);
+}
+
+.gridlist .grid h3 {
+  height: 40px;
+  margin: 0 0 16px;
+  font-size: $fs-normal;
+  font-weight: normal;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gridlist .grid p {
+  font-size: $fs-tiny;
+  color: $c-lite-black;
+  line-height: 1.5;
+  margin: 0;
+  height: 128px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gridlist .grid span {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.gridlist .grid span img {
+  dislay: block;
+  width: 20px;
+}
+
+.gridlist .grid span.without-image {
+  display: none;
 }

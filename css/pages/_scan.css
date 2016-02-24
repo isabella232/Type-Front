@@ -90,7 +90,7 @@
   transform: none;
   background: rgba(0,0,0,.5);
   line-height: 1.5;
-  transition: all .6s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .page__scan .page__content .info-panel--hide {

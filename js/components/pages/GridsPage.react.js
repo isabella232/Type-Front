@@ -17,15 +17,13 @@ class GridsPage extends Component {
           <div className="logo">
             <img src={Logo} />
           </div>
-
-          <h1>1989-11-20{this.props.data.date}</h1>
-
+          <h1>1989-11-20 {this.props.data.date}</h1>
           <ImportGridsButton />
         </header>
 
-        <GridsList />
+        <GridsList data={this.props.data.gridsReducer.grids} />
 
-        <ImportGridsPopup  {...this.props} />
+        <ImportGridsPopup {...this.props} />
       </div>
     )
   }
