@@ -44,13 +44,12 @@ import '../css/main.css';
 
 // Create the store with the redux-thunk middleware, which allows us
 // to do asynchronous things in the actions
+
 let initialStore = window.INITIAL;
 
 import rootReducer from './reducers/rootReducer';
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(rootReducer, initialStore);
-
-console.log(store)
 
 // Make reducers hot reloadable, see http://stackoverflow.com/questions/34243684/make-redux-reducers-and-other-non-components-hot-loadable
 if (module.hot) {

@@ -15,28 +15,32 @@
     <!-- This is the initial data directed output from server -->
     <script>
       window.INITIAL = {
-        showInfo: false,
-        showPopup: false,
-        grids: [
-          {
-            id: 0,
-            title: "今日纪录",
-            content: "上午请假陪 cc 去医院检查，最近她头晕的厉害。\n\n下午依旧去上班，打了新年来的第一次羽毛球。",
-            withImage: true
-          },
-          {
-            id: 1,
-            title: "今天我让这个世界更美好了一些吗？",
-            content: "情人节，没有让世界更美好；但是让自己的生活更加美好了些。",
-            withImage: true
-          },
-          {
-            id: 2,
-            title: "今天给我留下的印象最为深刻让我最为感动让我最为心碎的一件事",
-            content: "",
-            withImage: false
-          }
-        ]
+        scanReducer: {
+          showInfo: false
+        },
+        gridsReducer: {
+          showPopup: false,
+          grids: [
+            {
+              id: 0,
+              title: "今日纪录",
+              content: "上午请假陪 cc 去医院检查，最近她头晕的厉害。\n\n下午依旧去上班，打了新年来的第一次羽毛球。",
+              withImage: true
+            },
+            {
+              id: 1,
+              title: "今天我让这个世界更美好了一些吗？",
+              content: "情人节，没有让世界更美好；但是让自己的生活更加美好了些。",
+              withImage: true
+            },
+            {
+              id: 2,
+              title: "今天给我留下的印象最为深刻让我最为感动让我最为心碎的一件事",
+              content: "",
+              withImage: false
+            }
+          ]
+        }
       }
     </script>
 

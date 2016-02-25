@@ -11,7 +11,6 @@ import Logo from '../../../img/logo-black.png'
 
 class GridsPage extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="page__grids">
         <header>
