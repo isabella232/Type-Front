@@ -13,7 +13,11 @@
  * add it in the rootReducer.js.
  */
 
-import { READY_IMPORT_DIARIES, CANCEL_IMPORT_DIARIES } from '../constants/AppConstants'
+import { READY_IMPORT_DIARIES,
+        CANCEL_IMPORT_DIARIES,
+        OPEN_LIST_SINGLE_VIEW,
+        CLOSE_LIST_SINGLE_VIEW,
+        UPDATE_GRID_CONTENT} from '../constants/AppConstants'
 import assignToEmpty from '../utils/assign'
 
 var initialState = window.INITIAL
@@ -24,12 +28,24 @@ function gridsReducer(state = initialState, action) {
     case READY_IMPORT_DIARIES:
       return assignToEmpty(state, {
         showPopup: true
-        //showInfo: !state.showInfo
       });
     case CANCEL_IMPORT_DIARIES:
       return assignToEmpty(state, {
-        //showInfo: false
         showPopup: false
+      });
+    case OPEN_LIST_SINGLE_VIEW:
+      return assignToEmpty(state, {
+        singleEditView: true,
+        currentEditGrid: action.grid
+      });
+    case CLOSE_LIST_SINGLE_VIEW:
+      return assignToEmpty(state, {
+        singleEditView: false,
+        currentEditGrid: {}
+      });
+    case UPDATE_GRID_CONTENT:
+      return assignToEmpty(state, {
+        content: action.content
       });
     default:
       return state;

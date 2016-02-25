@@ -1,3 +1,4 @@
+/* Structure */
 .page__grids {}
 
 .page__grids header {
@@ -81,6 +82,7 @@
   width: 10px;
 }
 
+/* GridsList */
 .gridlist {
   width: 624px;
   margin: 48px auto 64px;
@@ -148,4 +150,26 @@
 
 .gridlist .grid > span.without-image {
   display: none;
+}
+
+/* GridEdit */
+.gridedit {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*background: $c-white;*/
+  background: rgba(0,0,0,.6)
+}
+
+.gridedit--header a {
+  color: rgba(74,74,74,.5);
+  font-size: $fs-small;
+  text-decoration: none;
+}
+
+.gridedit--header a img {
+  width: 19px;
+  vertical-align: middle;
 }

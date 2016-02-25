@@ -32,6 +32,8 @@ import {
   HIDE_SCAN_HELP_INFORMATION,
   READY_IMPORT_DIARIES,
   CANCEL_IMPORT_DIARIES,
+  OPEN_LIST_SINGLE_VIEW,
+  CLOSE_LIST_SINGLE_VIEW,
   UPDATE_GRID_CONTENT
 } from '../constants/AppConstants'
 
@@ -71,7 +73,14 @@ export function cancelImportDiaries() {
   return { type: CANCEL_IMPORT_DIARIES }
 }
 
-// GridPage
-export function updateGridContent() {
-  return { type: UPDATE_GRID_CONTENT }
+export function openListSingleView(grid) {
+  return { type: OPEN_LIST_SINGLE_VIEW, grid }
+}
+
+export function closeListSingleView() {
+  return { type: CLOSE_LIST_SINGLE_VIEW }
+}
+
+export function updateGridContent(content) {
+  return { type: UPDATE_GRID_CONTENT, content }
 }

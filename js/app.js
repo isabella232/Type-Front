@@ -35,7 +35,6 @@ import createHistory from 'history/lib/createBrowserHistory';
 // Import the pages
 import ScanPage from './components/pages/ScanPage.react';
 import GridsPage from './components/pages/GridsPage.react';
-import GridPage from './components/pages/GridPage.react';
 import NotFoundPage from './components/pages/NotFound.react';
 import App from './components/App.react';
 
@@ -67,7 +66,6 @@ ReactDOM.render(
       <Route component={App}>
         <Route path="/" component={ScanPage} />
         <Route path="/grids" component={GridsPage} />
-        <Route path="/grid/:id" component={GridPage} />
         <Route path="*" component={NotFoundPage} />
       </Route>
     </Router>

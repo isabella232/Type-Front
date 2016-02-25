@@ -1,24 +1,28 @@
 import React, { Component } from 'react'
 
+import { openListSingleView } from '../../../actions/AppActions'
+
 import Pic from '../../../../img/pic.png'
 
 export default class Grid extends Component {
-  enterGridPage(id) {
-    this.props.history.pushState(null, '/grid/' + id)
+  openGridEdit(grid) {
+    //this.props.history.pushState(null, '/grid/' + id)
+    this.props.dispatch(openListSingleView(grid))
   }
 
   render() {
+    let grid = this.props
     let withImageFlag = this.props.withImage ? 'with-image' : 'without-image'
     let contentEmptyFlag = this.props.content.length ? '' : 'empty'
 
     return (
       <div
         className={contentEmptyFlag + " grid"}
-        onClick={this.enterGridPage.bind(this, this.props.id)}
+        onClick={this.openGridEdit.bind(this, grid)}
       >
-        <h3>{this.props.title}</h3>
+        <h3>{grid.title}</h3>
         <p>
-          {this.props.content.split('\n').map((line, index) => {
+          {grid.content.split('\n').map((line, index) => {
             return (
               <span key={index}>
                 {line}

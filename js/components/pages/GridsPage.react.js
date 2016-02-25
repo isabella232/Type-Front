@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
 import GridsList from '../parts/GridsPage/GridsList.react.js'
+import GridEdit from '../parts/GridsPage/GridEdit.react.js'
 import ImportGridsButton from '../parts/GridsPage/ImportGridsButton.react.js'
 import ImportGridsPopup from '../parts/GridsPage/ImportGridsPopup.react.js'
 
@@ -17,11 +18,17 @@ class GridsPage extends Component {
           <div className="logo">
             <img src={Logo} />
           </div>
-          <h1>1989-11-20 {this.props.data.date}</h1>
+          <h1>1989-11-20</h1>
           <ImportGridsButton />
         </header>
 
-        <GridsList data={this.props.data.gridsReducer.grids} history={this.props.history} />
+        <GridsList
+          data={this.props.data.gridsReducer.grids}
+          history={this.props.history}
+          dispatch={this.props.dispatch}
+        />
+
+        <GridEdit dispatch={this.props.dispatch} />
 
         <ImportGridsPopup {...this.props} />
       </div>
