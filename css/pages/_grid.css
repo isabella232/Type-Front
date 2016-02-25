@@ -1,0 +1,12 @@
+.page__grid {}
+
+.page__grid header a {
+  color: rgba(74,74,74,.5);
+  font-size: $fs-small;
+  text-decoration: none;
+}
+
+.page__grid header a img {
+  width: 19px;
+  vertical-align: middle;
+}

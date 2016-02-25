@@ -31,16 +31,17 @@ import {
   TOGGLE_SCAN_HELP_INFORMATION,
   HIDE_SCAN_HELP_INFORMATION,
   READY_IMPORT_DIARIES,
-  CANCEL_IMPORT_DIARIES
-} from '../constants/AppConstants';
+  CANCEL_IMPORT_DIARIES,
+  UPDATE_GRID_CONTENT
+} from '../constants/AppConstants'
 
 export function asyncChangeProjectName(name) {
   return (dispatch) => {
     // You can do async stuff here!
     // API fetching, Animations,...
     // For more information as to how and why you would do this, check https://github.com/gaearon/redux-thunk
-    return dispatch(changeProjectName(name));
-  };
+    return dispatch(changeProjectName(name))
+  }
 }
 
 export function asyncChangeOwnerName(name) {
@@ -48,8 +49,8 @@ export function asyncChangeOwnerName(name) {
     // You can do async stuff here!
     // API fetching, Animations,...
     // For more information as to how and why you would do this, check https://github.com/gaearon/redux-thunk
-    return dispatch(changeOwnerName(name));
-  };
+    return dispatch(changeOwnerName(name))
+  }
 }
 
 // ScanPage
@@ -68,4 +69,9 @@ export function readyImportDiaries() {
 
 export function cancelImportDiaries() {
   return { type: CANCEL_IMPORT_DIARIES }
+}
+
+// GridPage
+export function updateGridContent() {
+  return { type: UPDATE_GRID_CONTENT }
 }

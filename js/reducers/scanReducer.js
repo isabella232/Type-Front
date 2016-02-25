@@ -13,12 +13,10 @@
  * add it in the rootReducer.js.
  */
 
-import { TOGGLE_SCAN_HELP_INFORMATION, HIDE_SCAN_HELP_INFORMATION } from '../constants/AppConstants';
-import assignToEmpty from '../utils/assign';
+import { TOGGLE_SCAN_HELP_INFORMATION, HIDE_SCAN_HELP_INFORMATION } from '../constants/AppConstants'
+import assignToEmpty from '../utils/assign'
 
-const initialState = {
-  showInfo: false
-};
+var initialState = window.INITIAL
 
 function scanReducer(state = initialState, action) {
   Object.freeze(state); // Don't mutate state directly, always use assign()!
@@ -36,4 +34,4 @@ function scanReducer(state = initialState, action) {
   }
 }
 
-export default scanReducer;
+export default scanReducer

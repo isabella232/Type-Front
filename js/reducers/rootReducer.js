@@ -5,8 +5,9 @@
 
 import scanReducer from './scanReducer'
 import gridsReducer from './gridsReducer'
+import gridReducer from './gridsReducer'
 
 import { combineReducers } from 'redux'
-const rootReducer = combineReducers({ scanReducer, gridsReducer })
+const rootReducer = combineReducers({ scanReducer, gridsReducer, gridReducer })
 
 export default rootReducer
