@@ -2,6 +2,7 @@ import { asyncChangeProjectName, asyncChangeOwnerName } from '../../actions/AppA
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import GridsList from '../parts/GridsPage/GridsList.react.js'
 import GridEdit from '../parts/GridsPage/GridEdit.react.js'
@@ -27,11 +28,20 @@ class GridsPage extends Component {
           dispatch={this.props.dispatch}
         />
 
-        <GridEdit
-          grids={this.props.data.gridsReducer.grids}
-          dispatch={this.props.dispatch}
-          gridId={this.props.data.gridsReducer.currentEditGridId}
-        />
+        <ReactCSSTransitionGroup
+          component="div"
+          transitionName="edit"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          <GridEdit
+            grids={this.props.data.gridsReducer.grids}
+            dispatch={this.props.dispatch}
+            gridId={this.props.data.gridsReducer.currentEditGridId}
+            key={this.props.data.gridsReducer.currentEditGridId}
+            showEdit={this.props.data.gridsReducer.showEdit}
+          />
+        </ReactCSSTransitionGroup>
 
         <ImportGridsPopup {...this.props} />
       </div>

@@ -154,22 +154,72 @@
 
 /* GridEdit */
 .gridedit {
+  display: none;
   position: fixed;
-  top: 50%;
+  width: 100%;
+  top: 0;
   right: 0;
   bottom: 0;
+  left: 100%;
+  box-shadow: 0 0 2px rgba(74,74,74,.5);
+  background: $c-white;
+  transition: all .5s ease-in-out;
+  z-index: -1;
+}
+
+.gridedit.show {
+  display: block;
   left: 0;
-  /*background: $c-white;*/
-  background: rgba(0,0,0,.6)
+  z-index: 100;
+}
+
+.gridedit.edit-enter {
+  left: 100%;
+}
+
+.gridedit.edit-enter-active {
+  left: 0;
+}
+
+.gridedit.edit-leave {
+  left: 0;
+}
+
+.gridedit.edit-leave-active {
+  left: 100%;
 }
 
 .gridedit--header a {
   color: rgba(74,74,74,.5);
   font-size: $fs-small;
   text-decoration: none;
+  display: block;
+  margin: 36px;
 }
 
 .gridedit--header a img {
   width: 19px;
   vertical-align: middle;
+  margin-right: 8px;
+}
+
+.gridedit--typearea {
+  width: 512px;
+  margin: 48px auto;
+}
+
+.gridedit--typearea h1 {
+  font-size: $fs-title-small;
+  line-height: $fs-title;
+  margin: 0 0 48px;
+}
+
+.gridedit--typearea textarea {
+  border: 0;
+  width: 100%;
+}
+
+.gridedit--footer {
+  position: absolute;
+  bottom: 36px;
 }

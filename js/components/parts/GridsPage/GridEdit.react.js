@@ -23,19 +23,22 @@ class GridEdit extends Component {
         currentGrid = grid
       }
     })
-    
+
+    console.log(this.props)
+    let showEdit = this.props.showEdit ? 'show ' : ''
+
     return (
-      <div className="gridedit">
+      <div className={showEdit + "gridedit"}>
         <div className="gridedit--header">
           <a href='#' onClick={(e) => this.backToList(e)}>
             <img src={Back} />
             Back
           </a>
         </div>
-        <main>
+        <div className="gridedit--typearea">
           <h1>{currentGrid.title}</h1>
           <textarea value={currentGrid.content} onChange={(e) => this.updateGridContent(e, currentGrid.id)}></textarea>
-        </main>
+        </div>
         <div className="gridedit--footer">
           <Link to='1'>Prev</Link>
           <Link to='2'>Next</Link>
