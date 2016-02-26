@@ -21,7 +21,15 @@
         gridsReducer: {
           showPopup: false,
           singleEditView: false,
-          currentEditGrid: {},
+          currentEditGridId: null,
+          /*
+          currentEditGrid: {
+            id: null,
+            title: '',
+            content: '',
+            withImage: false
+          },
+          */
           grids: [
             {
               id: 0,
@@ -31,8 +39,8 @@
             },
             {
               id: 1,
-              title: "今天我让这个世界更美好了一些吗？",
-              content: "情人节，没有让世界更美好；但是让自己的生活更加美好了些。",
+              title: "今天这个世界更美好了一些吗？",
+              content: "情人节",
               withImage: true
             },
             {

@@ -5,9 +5,8 @@ import { openListSingleView } from '../../../actions/AppActions'
 import Pic from '../../../../img/pic.png'
 
 export default class Grid extends Component {
-  openGridEdit(grid) {
-    //this.props.history.pushState(null, '/grid/' + id)
-    this.props.dispatch(openListSingleView(grid))
+  openGridEdit(gridId) {
+    this.props.dispatch(openListSingleView(gridId))
   }
 
   render() {
@@ -18,7 +17,7 @@ export default class Grid extends Component {
     return (
       <div
         className={contentEmptyFlag + " grid"}
-        onClick={this.openGridEdit.bind(this, grid)}
+        onClick={this.openGridEdit.bind(this, grid.id)}
       >
         <h3>{grid.title}</h3>
         <p>

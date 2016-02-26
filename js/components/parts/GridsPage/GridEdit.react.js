@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 
-import { closeListSingleView, updateGridContent } from '../../../actions/AppActions'
+import { closeListSingleView, asyncUpdateGridContent } from '../../../actions/AppActions'
 
 import Back from '../../../../img/back.png'
 
@@ -12,14 +12,18 @@ class GridEdit extends Component {
     this.props.dispatch(closeListSingleView())
   }
 
-  updateGridContent(e) {
-    this.props.dispatch(updateGridContent(e.target.value))
+  updateGridContent(e, gridId) {
+    this.props.dispatch(asyncUpdateGridContent(e.target.value, gridId))
   }
 
   render() {
-    let grid = this.props.data.gridsReducer.currentEditGrid
-    console.log(grid)
-
+    let currentGrid = {}
+    this.props.grids.forEach((grid) => {
+      if (grid.id == this.props.gridId) {
+        currentGrid = grid
+      }
+    })
+    
     return (
       <div className="gridedit">
         <div className="gridedit--header">
@@ -29,8 +33,8 @@ class GridEdit extends Component {
           </a>
         </div>
         <main>
-          <h1>{grid.title}</h1>
-          <textarea value={grid.content} onChange={(e) => this.updateGridContent(e)}></textarea>
+          <h1>{currentGrid.title}</h1>
+          <input value={currentGrid.content} onChange={(e) => this.updateGridContent(e, currentGrid.id)} />
         </main>
         <div className="gridedit--footer">
           <Link to='1'>Prev</Link>
@@ -43,6 +47,7 @@ class GridEdit extends Component {
 
 // REDUX STUFF
 
+          //<textarea value={grid.content} onChange={(e) => this.updateGridContent(e, grid)}></textarea>
 // Which props do we want to inject, given the global state?
 function select(state) {
   return {

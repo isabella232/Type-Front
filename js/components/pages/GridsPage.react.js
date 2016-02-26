@@ -24,11 +24,14 @@ class GridsPage extends Component {
 
         <GridsList
           data={this.props.data.gridsReducer.grids}
-          history={this.props.history}
           dispatch={this.props.dispatch}
         />
 
-        <GridEdit dispatch={this.props.dispatch} />
+        <GridEdit
+          grids={this.props.data.gridsReducer.grids}
+          dispatch={this.props.dispatch}
+          gridId={this.props.data.gridsReducer.currentEditGridId}
+        />
 
         <ImportGridsPopup {...this.props} />
       </div>

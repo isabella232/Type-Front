@@ -73,14 +73,20 @@ export function cancelImportDiaries() {
   return { type: CANCEL_IMPORT_DIARIES }
 }
 
-export function openListSingleView(grid) {
-  return { type: OPEN_LIST_SINGLE_VIEW, grid }
+export function openListSingleView(gridId) {
+  return { type: OPEN_LIST_SINGLE_VIEW, gridId }
 }
 
 export function closeListSingleView() {
   return { type: CLOSE_LIST_SINGLE_VIEW }
 }
 
-export function updateGridContent(content) {
-  return { type: UPDATE_GRID_CONTENT, content }
+export function updateGridContent(content, gridId) {
+  return { type: UPDATE_GRID_CONTENT, content, gridId }
+}
+
+export function asyncUpdateGridContent(content, gridId) {
+  return (dispatch) => {
+    return dispatch(updateGridContent(content, gridId))
+  }
 }

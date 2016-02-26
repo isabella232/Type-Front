@@ -36,7 +36,7 @@ function gridsReducer(state = initialState, action) {
     case OPEN_LIST_SINGLE_VIEW:
       return assignToEmpty(state, {
         singleEditView: true,
-        currentEditGrid: action.grid
+        currentEditGridId: action.gridId
       });
     case CLOSE_LIST_SINGLE_VIEW:
       return assignToEmpty(state, {
@@ -44,9 +44,18 @@ function gridsReducer(state = initialState, action) {
         currentEditGrid: {}
       });
     case UPDATE_GRID_CONTENT:
+      let newGrids = state.grids.map((grid) => {
+        if (grid.id == action.gridId) {
+          grid = assignToEmpty(grid, {
+            content: action.content
+          })
+        }
+        return grid
+      })
+
       return assignToEmpty(state, {
-        content: action.content
-      });
+        grids: newGrids
+      })
     default:
       return state;
   }

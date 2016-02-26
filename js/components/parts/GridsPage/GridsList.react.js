@@ -13,7 +13,6 @@ export default class GridsList extends Component {
           title={grid.title}
           content={grid.content}
           withImage={grid.withImage}
-          history={this.props.history}
           dispatch={dispatch}
         />
       )
