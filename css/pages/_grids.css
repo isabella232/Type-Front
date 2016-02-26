@@ -160,7 +160,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  left: 100%;
+  left: 0;
+  transform: translateX(100%);
   box-shadow: 0 0 2px rgba(74,74,74,.5);
   background: $c-white;
   transition: all .5s ease-in-out;
@@ -169,24 +170,24 @@
 
 .gridedit.show {
   display: block;
-  left: 0;
+  transform: translateX(0);
   z-index: 100;
 }
 
 .gridedit.edit-enter {
-  left: 100%;
+  transform: translateX(100%);
 }
 
 .gridedit.edit-enter-active {
-  left: 0;
+  transform: translateX(0);
 }
 
 .gridedit.edit-leave {
-  left: 0;
+  transform: translateX(0);
 }
 
 .gridedit.edit-leave-active {
-  left: 100%;
+  transform: translateX(100%);
 }
 
 .gridedit--header a {
@@ -210,16 +211,57 @@
 
 .gridedit--typearea h1 {
   font-size: $fs-title-small;
+  font-weight: normal;
   line-height: $fs-title;
+  min-height: $fs-title;
+  max-height: 64px;
   margin: 0 0 48px;
+  overflow: hidden;
 }
 
 .gridedit--typearea textarea {
   border: 0;
   width: 100%;
+  height: calc(100vh - 344px); /* 216px to window top edge; 128px to window bottom edge */
+  resize: none;
 }
 
 .gridedit--footer {
   position: absolute;
-  bottom: 36px;
+  bottom: 48px;
+  left: 36px;
+  right: 36px;
+  overflow: hidden;
+  line-height: $fs-bigger;
+}
+
+.gridedit--footer a {
+  color: rgba(74,74,74,.5);
+  text-decoration: none;
+  transition: filter .5s ease-in-out;
+}
+
+.gridedit--footer a img {
+  width: 11px;
+  vertical-align: middle;
+}
+
+.gridedit--footer a:hover {
+  filter: sepia() saturate(10000%) hue-rotate(40deg);
+}
+
+.gridedit--footer a:first-child {
+  float: left;
+}
+
+.gridedit--footer a:first-child img {
+  margin-right: 8px;
+}
+
+.gridedit--footer a:last-child {
+  float: right;
+}
+
+.gridedit--footer a:last-child img {
+  margin-left: 8px;
 }

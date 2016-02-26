@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { closeListSingleView, asyncUpdateGridContent } from '../../../actions/AppActions'
 
 import Back from '../../../../img/back.png'
+import Prev from '../../../../img/prev.png'
+import Next from '../../../../img/next.png'
 
 class GridEdit extends Component {
   backToList(e) {
@@ -24,7 +26,6 @@ class GridEdit extends Component {
       }
     })
 
-    console.log(this.props)
     let showEdit = this.props.showEdit ? 'show ' : ''
 
     return (
@@ -36,12 +37,21 @@ class GridEdit extends Component {
           </a>
         </div>
         <div className="gridedit--typearea">
-          <h1>{currentGrid.title}</h1>
-          <textarea value={currentGrid.content} onChange={(e) => this.updateGridContent(e, currentGrid.id)}></textarea>
+          <h1 title={currentGrid.title}>{currentGrid.title}</h1>
+          <textarea
+            value={currentGrid.content}
+            onChange={(e) => this.updateGridContent(e, currentGrid.id)}
+          ></textarea>
         </div>
         <div className="gridedit--footer">
-          <Link to='1'>Prev</Link>
-          <Link to='2'>Next</Link>
+          <Link to='1'>
+            <img src={Prev} />
+            Prev
+          </Link>
+          <Link to='2'>
+            Next
+            <img src={Next} />
+          </Link>
         </div>
       </div>
     )
@@ -50,7 +60,6 @@ class GridEdit extends Component {
 
 // REDUX STUFF
 
-          //<textarea value={grid.content} onChange={(e) => this.updateGridContent(e, grid)}></textarea>
 // Which props do we want to inject, given the global state?
 function select(state) {
   return {

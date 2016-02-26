@@ -12,12 +12,13 @@ export default class Grid extends Component {
   render() {
     let grid = this.props
     let withImageFlag = this.props.withImage ? 'with-image' : 'without-image'
-    let contentEmptyFlag = this.props.content.length ? '' : 'empty'
+    let contentEmptyFlag = this.props.content.length ? '' : 'empty '
 
     return (
       <div
-        className={contentEmptyFlag + " grid"}
+        className={contentEmptyFlag + "grid"}
         onClick={this.openGridEdit.bind(this, grid.id)}
+        title={grid.title}
       >
         <h3>{grid.title}</h3>
         <p>
