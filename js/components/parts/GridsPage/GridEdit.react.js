@@ -34,7 +34,7 @@ class GridEdit extends Component {
         </div>
         <main>
           <h1>{currentGrid.title}</h1>
-          <input value={currentGrid.content} onChange={(e) => this.updateGridContent(e, currentGrid.id)} />
+          <textarea value={currentGrid.content} onChange={(e) => this.updateGridContent(e, currentGrid.id)}></textarea>
         </main>
         <div className="gridedit--footer">
           <Link to='1'>Prev</Link>
