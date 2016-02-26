@@ -195,7 +195,7 @@
   font-size: $fs-small;
   text-decoration: none;
   display: block;
-  margin: 36px;
+  margin: 32px 36px;
 }
 
 .gridedit--header a img {
@@ -215,7 +215,7 @@
   line-height: $fs-title;
   min-height: $fs-title;
   max-height: 64px;
-  margin: 0 0 48px;
+  margin: 0 0 32px;
   overflow: hidden;
 }
 
@@ -224,6 +224,7 @@
   width: 100%;
   height: calc(100vh - 344px); /* 216px to window top edge; 128px to window bottom edge */
   resize: none;
+  outline: none;
 }
 
 .gridedit--footer {

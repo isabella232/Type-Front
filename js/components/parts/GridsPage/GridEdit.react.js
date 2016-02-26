@@ -41,6 +41,7 @@ class GridEdit extends Component {
           <textarea
             value={currentGrid.content}
             onChange={(e) => this.updateGridContent(e, currentGrid.id)}
+            ref={(t) => this._textarea = t}
           ></textarea>
         </div>
         <div className="gridedit--footer">
@@ -55,6 +56,12 @@ class GridEdit extends Component {
         </div>
       </div>
     )
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this._textarea.focus()
+    }, 10)
   }
 }
 
