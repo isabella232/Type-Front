@@ -239,30 +239,30 @@
 .gridedit--footer a {
   color: rgba(74,74,74,.5);
   text-decoration: none;
-  transition: filter .5s ease-in-out;
+  transition: color .5s ease-in-out;
 }
 
 .gridedit--footer a img {
   width: 11px;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 
 .gridedit--footer a:hover {
-  filter: sepia() saturate(10000%) hue-rotate(40deg);
+  color: $c-active;
 }
 
-.gridedit--footer a:first-child {
+.gridedit--footer a.gridedit--prev {
   float: left;
 }
 
-.gridedit--footer a:first-child img {
+.gridedit--footer a.gridedit--prev img {
   margin-right: 8px;
 }
 
-.gridedit--footer a:last-child {
+.gridedit--footer a.gridedit--next {
   float: right;
 }
 
-.gridedit--footer a:last-child img {
+.gridedit--footer a.gridedit--next img {
   margin-left: 8px;
 }

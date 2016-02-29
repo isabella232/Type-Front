@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import { connect } from 'react-redux'
 
 import { closeListSingleView, asyncUpdateGridContent } from '../../../actions/AppActions'
+
+import GridEditPrevAndNext from './GridEditPrevAndNext.react'
 
 import Back from '../../../../img/back.png'
 import Prev from '../../../../img/prev.png'
@@ -19,10 +20,21 @@ class GridEdit extends Component {
   }
 
   render() {
-    let currentGrid = {}
-    this.props.grids.forEach((grid) => {
+    var currentGridsSet = {
+      prev: {},
+      current: {},
+      next: {}
+    }
+
+    this.props.grids.forEach((grid, index) => {
       if (grid.id == this.props.gridId) {
-        currentGrid = grid
+        currentGridsSet.current = grid
+        if (index > 0) {
+          currentGridsSet.prev = this.props.grids[index-1]
+        }
+        if (index < this.props.grids.length - 1) {
+          currentGridsSet.next = this.props.grids[index+1]
+        }
       }
     })
 
@@ -37,23 +49,14 @@ class GridEdit extends Component {
           </a>
         </div>
         <div className="gridedit--typearea">
-          <h1 title={currentGrid.title}>{currentGrid.title}</h1>
+          <h1 title={currentGridsSet.current.title}>{currentGridsSet.current.title}</h1>
           <textarea
-            value={currentGrid.content}
-            onChange={(e) => this.updateGridContent(e, currentGrid.id)}
+            value={currentGridsSet.current.content}
+            onChange={(e) => this.updateGridContent(e, currentGridsSet.current.id)}
             ref={(t) => this._textarea = t}
           ></textarea>
         </div>
-        <div className="gridedit--footer">
-          <Link to='1'>
-            <img src={Prev} />
-            Prev
-          </Link>
-          <Link to='2'>
-            Next
-            <img src={Next} />
-          </Link>
-        </div>
+        <GridEditPrevAndNext dataset={currentGridsSet} />
       </div>
     )
   }
@@ -61,7 +64,7 @@ class GridEdit extends Component {
   componentDidMount() {
     setTimeout(() => {
       this._textarea.focus()
-    }, 10)
+    }, 1)
   }
 }
 
