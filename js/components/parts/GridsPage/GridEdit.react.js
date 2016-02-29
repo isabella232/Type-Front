@@ -56,7 +56,7 @@ class GridEdit extends Component {
             ref={(t) => this._textarea = t}
           ></textarea>
         </div>
-        <GridEditPrevAndNext dataset={currentGridsSet} />
+        <GridEditPrevAndNext dataset={currentGridsSet} dispatch={this.props.dispatch} />
       </div>
     )
   }

@@ -2,6 +2,7 @@ import { READY_IMPORT_DIARIES,
         CANCEL_IMPORT_DIARIES,
         OPEN_LIST_SINGLE_VIEW,
         CLOSE_LIST_SINGLE_VIEW,
+        CHANGE_CURRENT_GRID,
         UPDATE_GRID_CONTENT} from '../constants/AppConstants'
 import assignToEmpty from '../utils/assign'
 
@@ -26,7 +27,13 @@ function gridsReducer(state = initialState, action) {
     case CLOSE_LIST_SINGLE_VIEW:
       return assignToEmpty(state, {
         showEdit: false,
-        currentEditGridId: null
+        currentEditGridId: null,
+        changeGrid: false
+      });
+    case CHANGE_CURRENT_GRID:
+      return assignToEmpty(state, {
+        currentEditGridId: action.gridId,
+        changeGrid: true
       });
     case UPDATE_GRID_CONTENT:
       let newGrids = state.grids.map((grid) => {

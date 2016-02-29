@@ -13,6 +13,12 @@ import Logo from '../../../img/logo-black.png'
 
 class GridsPage extends Component {
   render() {
+    if (this.props.data.gridsReducer.changeGrid) {
+      var editTransitionName = 'change'
+    } else {
+      var editTransitionName = 'edit'
+    }
+
     return (
       <div className="page__grids">
         <header>
@@ -30,7 +36,7 @@ class GridsPage extends Component {
 
         <ReactCSSTransitionGroup
           component="div"
-          transitionName="edit"
+          transitionName={editTransitionName}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
         >

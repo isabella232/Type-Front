@@ -34,6 +34,7 @@ import {
   CANCEL_IMPORT_DIARIES,
   OPEN_LIST_SINGLE_VIEW,
   CLOSE_LIST_SINGLE_VIEW,
+  CHANGE_CURRENT_GRID,
   UPDATE_GRID_CONTENT
 } from '../constants/AppConstants'
 
@@ -79,6 +80,10 @@ export function openListSingleView(gridId) {
 
 export function closeListSingleView() {
   return { type: CLOSE_LIST_SINGLE_VIEW }
+}
+
+export function changeCurrentGrid(gridId) {
+  return { type: CHANGE_CURRENT_GRID, gridId }
 }
 
 export function updateGridContent(content, gridId) {

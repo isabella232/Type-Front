@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { closeListSingleView, asyncUpdateGridContent } from '../../../actions/AppActions'
+import { closeListSingleView,
+          asyncUpdateGridContent,
+          changeCurrentGrid } from '../../../actions/AppActions'
 
 import Back from '../../../../img/back.png'
 import Prev from '../../../../img/prev.png'
 import Next from '../../../../img/next.png'
 
 export default class GridEditPrevAndNext extends Component {
+  changeGrid(gridId) {
+    this.props.dispatch(changeCurrentGrid(gridId))
+  }
+
   render() {
     let data = this.props.dataset
 
     let all = (
       <div className="gridedit--footer">
-        <a href="#" className="gridedit--prev">
+        <a className="gridedit--prev" onClick={this.changeGrid.bind(this, data.prev.id)}>
           <img src={Prev} />
           <span>{data.prev.title}</span>
         </a>
-        <a href="#" className="gridedit--next">
+        <a className="gridedit--next" onClick={this.changeGrid.bind(this, data.next.id)}>
           <span>{data.next.title}</span>
           <img src={Next} />
         </a>
@@ -26,7 +32,7 @@ export default class GridEditPrevAndNext extends Component {
 
     let prev = (
       <div className="gridedit--footer">
-        <a href="#" className="gridedit--prev">
+        <a className="gridedit--prev" onClick={this.changeGrid.bind(this, data.prev.id)}>
           <img src={Prev} />
           <span>{data.prev.title}</span>
         </a>
@@ -35,7 +41,7 @@ export default class GridEditPrevAndNext extends Component {
 
     let next = (
       <div className="gridedit--footer">
-        <a href="#" className="gridedit--next">
+        <a className="gridedit--next" onClick={this.changeGrid.bind(this, data.next.id)}>
           <span>{data.next.title}</span>
           <img src={Next} />
         </a>
