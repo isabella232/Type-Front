@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 
-//import { toggleScanHelpInformation, hideScanHelpInformation } from '../../../actions/AppActions'
-
-//import Info from '../../../../img/info.png'
-
-import qr from 'qr-image'
+import qrcode from 'yaqrcode'
 
 export default class ScanHelpButton extends Component {
   render() {
-    var qr_png = qr.image('I love QR!', { type: 'png' })
-
-    console.log(qr_png)
+    let base64 = qrcode('hello world', {
+      size: 220
+    })
 
     return (
-      <img src={qr_png} />
+      <img src={base64} />
     )
   }
 }
