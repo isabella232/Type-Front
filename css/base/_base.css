@@ -33,4 +33,5 @@ body {
 #app {
   min-width: 968px;
   height: 100vh;
+  background: $c-white;
 }

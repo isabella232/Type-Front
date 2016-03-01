@@ -6,8 +6,8 @@ export default class ScanQRCode extends Component {
   render() {
     return (
       <div className="qrcode">
-        <p>QRCODE</p>
         <QRCode />
+        <strong>Scan to start typing</strong>
       </div>
     )
   }
