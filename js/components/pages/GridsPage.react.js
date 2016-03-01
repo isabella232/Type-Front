@@ -37,8 +37,8 @@ class GridsPage extends Component {
         <ReactCSSTransitionGroup
           component="div"
           transitionName={editTransitionName}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
+          transitionEnterTimeout={400}
+          transitionLeaveTimeout={400}
         >
           <GridEdit
             grids={this.props.data.gridsReducer.grids}

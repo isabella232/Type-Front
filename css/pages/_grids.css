@@ -101,7 +101,7 @@
   box-shadow: 0 0 2px rgba(0,0,0,.3);
   border-radius: 2px;
   overflow: hidden;
-  transition: all .5s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .gridlist .grid:hover {
@@ -170,7 +170,7 @@
   transform: translateX(100%);
   box-shadow: 0 0 2px rgba(74,74,74,.5);
   background: $c-white;
-  transition: all .5s ease-in-out;
+  transition: all .4s ease-in-out;
   z-index: -1;
 }
 
@@ -233,7 +233,7 @@
 .gridedit--typearea {
   max-width: 512px;
   margin: 48px auto 0;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .4s ease-in-out;
 }
 
 .gridedit--typearea h1 {
@@ -295,13 +295,13 @@
   right: 36px;
   overflow: hidden;
   line-height: $fs-bigger;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .4s ease-in-out;
 }
 
 .gridedit--footer a {
   color: rgba(74,74,74,.5);
   text-decoration: none;
-  transition: color .5s ease-in-out;
+  transition: color .4s ease-in-out;
   cursor: pointer;
 }
 
