@@ -30,7 +30,8 @@ import { Provider } from 'react-redux';
 import { Router, Route, Redirect } from 'react-router';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import createHistory from 'history/lib/createBrowserHistory';
+//import createHistory from 'history/lib/createBrowserHistory';
+import createHistory from 'history/lib/createHashHistory';
 
 // Import the pages
 import ScanPage from './components/pages/ScanPage.react';
