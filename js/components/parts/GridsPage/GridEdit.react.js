@@ -50,11 +50,14 @@ class GridEdit extends Component {
         </div>
         <div className="gridedit--typearea">
           <h1 title={currentGridsSet.current.title}>{currentGridsSet.current.title}</h1>
-          <textarea
-            value={currentGridsSet.current.content}
-            onChange={(e) => this.updateGridContent(e, currentGridsSet.current.id)}
-            ref={(t) => this._textarea = t}
-          ></textarea>
+
+          <div className="gridedit--typearea--cont">
+            <textarea
+              value={currentGridsSet.current.content}
+              onChange={(e) => this.updateGridContent(e, currentGridsSet.current.id)}
+              ref={(t) => this._textarea = t}
+            ></textarea>
+          </div>
         </div>
         <GridEditPrevAndNext dataset={currentGridsSet} dispatch={this.props.dispatch} />
       </div>

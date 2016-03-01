@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { cancelImportDiaries } from '../../../actions/AppActions'
 
+import QRCode from  '../QRCode.react'
+
 import Close from '../../../../img/close.png'
 
 export default class ImportGridsPopup extends Component {
@@ -20,6 +22,7 @@ export default class ImportGridsPopup extends Component {
           <b>
             This is the Grids POPUP.
           </b>
+          <QRCode />
           <a href="#" onClick={ e => this.closePopup(e) }>
             <img src={Close} />
           </a>
