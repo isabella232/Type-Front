@@ -64,11 +64,9 @@ module.exports = function(options) {
     ]
   }
 
-  /* need to un-comment before production
   plugins.push(new AppCachePlugin({ // AppCache should be in both prod and dev env
     exclude: ['.htaccess'] // No need to cache that. See https://support.hostgator.com/articles/403-forbidden-or-no-permission-to-access
   }));
-  */
 
   return {
     entry: entry,
