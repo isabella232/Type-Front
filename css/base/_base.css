@@ -35,3 +35,21 @@ body {
   height: 100vh;
   background: $c-white;
 }
+
+.route-change-enter {
+  opacity: 0.01;
+  transition: opacity .4s ease-in-out;
+}
+
+.route-change-enter-active {
+  opacity: 1;
+}
+
+.route-change-leave {
+  opacity: 1;
+  transition: opacity .4s ease-in-out;
+}
+
+.route-change-leave-active {
+  opacity: 0.01;
+}
