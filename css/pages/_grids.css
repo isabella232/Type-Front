@@ -265,7 +265,7 @@
 
 .gridedit--header a {
   color: rgba(74,74,74,.5);
-  font-size: $fs-small;
+  font-size: $fs-normal;
   text-decoration: none;
   display: block;
   margin: 32px 36px;
