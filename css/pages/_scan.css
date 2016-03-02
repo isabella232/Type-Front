@@ -73,17 +73,20 @@
 }
 
 .page__scan .page__content .info-btn {
-  font-size: $fs-small;
+  font-size: $fs-tiny;
   bottom: 56px;
   color: $c-white;
   text-decoration: none;
-  border-bottom: 1px solid $c-white;
+}
+
+.page__scan .page__content .info-btn:hover {
+  text-decoration: underline;
 }
 
 .page__scan .page__content .info-btn img {
-  vertical-align: baseline;
-  width: 8px;
-  margin-right: 8px;
+  vertical-align: -4px;
+  width: 16px;
+  margin-right: 4px;
 }
 
 .page__scan .page__content .info-panel {
@@ -114,8 +117,19 @@
 
 .page__scan .page__content .info-panel a {
   color: $c-active;
+  text-decoration: none;
+}
+
+.page__scan .page__content .info-panel a:hover {
   text-decoration: underline;
 }
+
+.page__scan .page__content .info-panel a img {
+  width: 12px;
+  vertical-align: baseline;
+  margin-right: 4px;
+}
+
 
 .page__scan .page__content .info-panel ol {
   margin: 0;

@@ -14,7 +14,7 @@ export default class ScanHelpButton extends Component {
     return (
       <a href="#" className="info-btn" onClick={ e => this.toggleHelp(e) }>
         <img src={Info} />
-        Need help?
+        Need help
       </a>
     )
   }

@@ -268,7 +268,7 @@
 }
 
 .gridedit--header a img {
-  width: 19px;
+  width: 22px;
   vertical-align: middle;
   margin-right: 8px;
 }
@@ -346,11 +346,23 @@
   text-decoration: none;
   transition: color .4s ease-in-out;
   cursor: pointer;
+  display: block;
+  width: 35%;
+}
+
+.gridedit--footer a span {
+  display: block;
+  width: calc(100% - 20px);
+  white-space: pre;
+  height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .gridedit--footer a img {
   width: 11px;
   vertical-align: bottom;
+  display: block;
 }
 
 .gridedit--footer a:hover {
@@ -361,14 +373,25 @@
   float: left;
 }
 
+.gridedit--footer a.gridedit--prev span {
+  float: left;
+}
+
 .gridedit--footer a.gridedit--prev img {
   margin-right: 8px;
+  float: left;
 }
 
 .gridedit--footer a.gridedit--next {
   float: right;
+  text-align: right;
+}
+
+.gridedit--footer a.gridedit--next span {
+  float: right;
 }
 
 .gridedit--footer a.gridedit--next img {
+  float: right;
   margin-left: 8px;
 }

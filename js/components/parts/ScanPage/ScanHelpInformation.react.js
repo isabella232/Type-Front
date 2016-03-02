@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import Link from '../../../../img/link.png'
+
 export default class ScanHelpInformation extends Component {
   render() {
     let show = this.props.data.scanReducer.showInfo ? 'info-panel--show' : 'info-panel--hide'
@@ -9,8 +11,8 @@ export default class ScanHelpInformation extends Component {
         <br />
         <br />
         <ol>
-          <li>Download <a href="https://itunes.apple.com/app/id597077261?mt=8&ign-mpt=uo%3D4">Grid Diary</a> from App Store.</li>
-          <li>Navigate to the date that you want to write on, tap the “More” button onthe bottom right.</li>
+          <li>Download <a href="https://itunes.apple.com/app/id597077261?mt=8&ign-mpt=uo%3D4"><img src={Link} />Grid Diary</a> from App Store.</li>
+          <li>Navigate to the date that you want to write on, tap the “More” button on the bottom right.</li>
           <li>Tap “Cloud Input”, please allow Grid Diary to access your camera if needed.</li>
           <li>Scan QR code on the start page to start writing.</li>
           <li>Tap “Done” on the top right when you finish writing.</li>

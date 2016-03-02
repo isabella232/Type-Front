@@ -19,31 +19,27 @@ export default class GridEditPrevAndNext extends Component {
 
     let all = (
       <div className="gridedit--footer">
-        <a className="gridedit--prev" onClick={this.changeGrid.bind(this, data.prev.id)}>
-          <img src={Prev} />
-          <span>{data.prev.title}</span>
+        <a className="gridedit--prev" onClick={this.changeGrid.bind(this, data.prev.id)} title={data.prev.title}>
+          <img src={Prev} /><span>{data.prev.title}</span>
         </a>
-        <a className="gridedit--next" onClick={this.changeGrid.bind(this, data.next.id)}>
-          <span>{data.next.title}</span>
-          <img src={Next} />
+        <a className="gridedit--next" onClick={this.changeGrid.bind(this, data.next.id)} title={data.next.title}>
+          <img src={Next} /><span>{data.next.title}</span>
         </a>
       </div>
     )
 
     let prev = (
       <div className="gridedit--footer">
-        <a className="gridedit--prev" onClick={this.changeGrid.bind(this, data.prev.id)}>
-          <img src={Prev} />
-          <span>{data.prev.title}</span>
+        <a className="gridedit--prev" onClick={this.changeGrid.bind(this, data.prev.id)} title={data.prev.title}>
+          <img src={Prev} /><span>{data.prev.title}</span>
         </a>
       </div>
     )
 
     let next = (
       <div className="gridedit--footer">
-        <a className="gridedit--next" onClick={this.changeGrid.bind(this, data.next.id)}>
-          <span>{data.next.title}</span>
-          <img src={Next} />
+        <a className="gridedit--next" onClick={this.changeGrid.bind(this, data.next.id)} title={data.next.title}>
+          <img src={Next} /><span>{data.next.title}</span>
         </a>
       </div>
     )
