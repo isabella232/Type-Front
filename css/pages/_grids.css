@@ -240,21 +240,25 @@
 }
 
 .gridedit.change-enter .gridedit--typearea,
+.gridedit.change-enter .gridedit--current,
 .gridedit.change-enter .gridedit--footer {
   opacity: 0.01;
 }
 
 .gridedit.change-enter-active .gridedit--typearea,
+.gridedit.change-enter-active .gridedit--current,
 .gridedit.change-enter-active .gridedit--footer,{
   opacity: 1;
 }
 
 .gridedit.change-leave .gridedit--typearea,
+.gridedit.change-leave .gridedit--current,
 .gridedit.change-leave .gridedit--footer {
   opacity: 1;
 }
 
 .gridedit.change-leave-active .gridedit--typearea,
+.gridedit.change-leave-active .gridedit--current,
 .gridedit.change-leave-active .gridedit--footer {
   opacity: 0.01;
 }
@@ -265,6 +269,11 @@
   text-decoration: none;
   display: block;
   margin: 32px 36px;
+  transition: all .4s ease-in-out;
+}
+
+.gridedit--header a:hover {
+  color: $c-black;
 }
 
 .gridedit--header a img {
@@ -366,7 +375,7 @@
 }
 
 .gridedit--footer a:hover {
-  color: $c-active;
+  color: $c-black;
 }
 
 .gridedit--footer a.gridedit--prev {
@@ -394,4 +403,13 @@
 .gridedit--footer a.gridedit--next img {
   float: right;
   margin-left: 8px;
+}
+
+.gridedit--current {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(74,74,74,.5);
+  transition: all .4s ease-in-out;
 }

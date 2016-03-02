@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { closeListSingleView, asyncUpdateGridContent } from '../../../actions/AppActions'
 
 import GridEditPrevAndNext from './GridEditPrevAndNext.react'
+import GridEditCurrentCounter from './GridEditCurrentCounter.react'
 
 import Back from '../../../../img/back.png'
 import Prev from '../../../../img/prev.png'
@@ -60,6 +61,7 @@ class GridEdit extends Component {
           </div>
         </div>
         <GridEditPrevAndNext dataset={currentGridsSet} dispatch={this.props.dispatch} />
+        <GridEditCurrentCounter {...this.props} />
       </div>
     )
   }
