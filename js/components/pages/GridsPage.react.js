@@ -11,6 +11,8 @@ import ImportGridsPopup from '../parts/GridsPage/ImportGridsPopup.react.js'
 
 import Logo from '../../../img/logo-black.png'
 
+import leaveAlert from '../../utils/leaveAlert'
+
 class GridsPage extends Component {
   render() {
     if (this.props.data.gridsReducer.changeGrid) {
@@ -52,6 +54,10 @@ class GridsPage extends Component {
         <ImportGridsPopup {...this.props} />
       </div>
     )
+  }
+
+  componentDidMount() {
+    leaveAlert()
   }
 }
 
