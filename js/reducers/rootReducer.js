@@ -29,6 +29,7 @@ function rootReducer(state = initialState, action) {
         showInfo: false
       });
     case DATA_INIT:
+      setTimeout(() => {action.history.pushState(null, '/grids')}, 100)
       return assignToEmpty(state, {
         gridsSet: action.gridsSet
       })

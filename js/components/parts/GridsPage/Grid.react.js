@@ -11,8 +11,8 @@ export default class Grid extends Component {
 
   render() {
     let grid = this.props
-    let withImageFlag = this.props.photo_url.length ? 'with-image' : 'without-image'
-    let contentEmptyFlag = this.props.content.length ? '' : 'empty '
+    let withImageFlag = [this.props.photo_url].join('').length ? 'with-image' : 'without-image'
+    let contentEmptyFlag = [this.props.content].join('').length ? '' : 'empty '
 
     return (
       <div
@@ -22,7 +22,7 @@ export default class Grid extends Component {
       >
         <h3>{grid.title}</h3>
         <p>
-          {grid.content.split('\n').map((line, index) => {
+          {[grid.content].join('').split('\n').map((line, index) => {
             return (
               <span key={index}>
                 {line}

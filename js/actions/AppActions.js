@@ -45,15 +45,15 @@ export function generateScanQRCode(qrcodeText) {
   return { type: GENERATE_SCAN_QRCODE, qrcodeText }
 }
 
-export function dataInit(gridsSet) {
-  return { type: DATA_INIT, gridsSet }
+export function dataInit(gridsSet, history) {
+  return { type: DATA_INIT, gridsSet, history }
 }
 
-export function asyncDataInit(diaryURL) {
+export function asyncDataInit(diaryURL, history) {
   return (dispatch) => {
     return fetch(diaryURL)
       .then(response => response.json())
-      .then(json => dispatch(dataInit(json)))
+      .then(json => dispatch(dataInit(json, history)))
   }
 }
 

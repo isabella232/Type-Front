@@ -36,7 +36,7 @@ export default class ScanQRCode extends Component {
       let success = message.success
 
       if (success) {
-        this.props.dispatch(asyncDataInit(message.url))
+        this.props.dispatch(asyncDataInit(message.url, this.props.history))
       } else {
         // dispatch the error message
         alert('wrong')
