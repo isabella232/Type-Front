@@ -12,7 +12,7 @@ export default class ScanQRCode extends Component {
   render() {
     return (
       <div className="qrcode">
-        <QRCode text={this.props.data.scanReducer.qrcodeText} />
+        <QRCode text={this.props.data.qrcodeText} />
         <strong>Scan to start typing</strong>
       </div>
     )

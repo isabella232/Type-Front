@@ -23,11 +23,14 @@ class ScanPage extends Component {
           <ScanQRCode {...this.props} />
 
           <ScanHelpButton {...this.props} />
-
           <ScanHelpInfomation {...this.props} />
         </div>
       </div>
     )
+    /*
+
+
+          */
   }
 }
 
