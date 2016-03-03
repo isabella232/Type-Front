@@ -27,7 +27,7 @@ class GridsPage extends Component {
           <div className="logo">
             <img src={Logo} />
           </div>
-          <h1>1989-11-20</h1>
+          <h1>{this.props.data.gridsSet.localized_date}</h1>
           <ImportGridsButton {...this.props} />
         </header>
 
