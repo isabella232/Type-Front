@@ -4,7 +4,7 @@ import Link from '../../../../img/link.png'
 
 export default class ScanHelpInformation extends Component {
   render() {
-    let show = this.props.data.scanReducer.showInfo ? 'info-panel--show' : 'info-panel--hide'
+    let show = this.props.data.showInfo ? 'info-panel--show' : 'info-panel--hide'
     return (
       <div className={show + ' info-panel'}>
         <strong>Instructions:</strong>

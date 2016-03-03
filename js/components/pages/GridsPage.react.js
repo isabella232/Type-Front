@@ -15,7 +15,7 @@ import { leaveAlert } from '../../utils/helpFuncs'
 
 class GridsPage extends Component {
   render() {
-    if (this.props.data.gridsReducer.changeGrid) {
+    if (this.props.data.changeGrid) {
       var editTransitionName = 'change'
     } else {
       var editTransitionName = 'edit'
@@ -31,10 +31,7 @@ class GridsPage extends Component {
           <ImportGridsButton {...this.props} />
         </header>
 
-        <GridsList
-          data={this.props.data.gridsReducer.grids}
-          dispatch={this.props.dispatch}
-        />
+        <GridsList {...this.props} />
 
         <ReactCSSTransitionGroup
           component="div"
@@ -43,21 +40,17 @@ class GridsPage extends Component {
           transitionLeaveTimeout={400}
         >
           <GridEdit
-            grids={this.props.data.gridsReducer.grids}
+            grids={this.props.data.gridsSet.grids}
             dispatch={this.props.dispatch}
-            gridId={this.props.data.gridsReducer.currentEditGridId}
-            key={this.props.data.gridsReducer.currentEditGridId}
-            showEdit={this.props.data.gridsReducer.showEdit}
+            gridId={this.props.data.currentEditGridId}
+            key={this.props.data.currentEditGridId}
+            showEdit={this.props.data.showEdit}
           />
         </ReactCSSTransitionGroup>
 
         <ImportGridsPopup {...this.props} />
       </div>
     )
-  }
-
-  componentWillMount() {
-    window.localStorage.getItem('gridsSet', (err, value) => console.log(value))
   }
 
   componentDidMount() {
