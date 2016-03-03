@@ -11,7 +11,7 @@ export default class Grid extends Component {
 
   render() {
     let grid = this.props
-    let withImageFlag = this.props.withImage ? 'with-image' : 'without-image'
+    let withImageFlag = this.props.photo_url.length ? 'with-image' : 'without-image'
     let contentEmptyFlag = this.props.content.length ? '' : 'empty '
 
     return (

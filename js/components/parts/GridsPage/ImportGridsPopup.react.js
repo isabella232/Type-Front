@@ -15,9 +15,8 @@ export default class ImportGridsPopup extends Component {
   }
 
   render() {
-    let show = this.props.data.gridsReducer.showPopup ? 'mask--show' : ''
-    //let import_flag = true
-    let import_flag = false
+    let show = this.props.data.showPopup ? 'mask--show' : ''
+    let import_flag = true // TODO: import grids data
 
     let import_success = (
       <div className={show + ' mask'}>
