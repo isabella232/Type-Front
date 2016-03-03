@@ -59,7 +59,7 @@ function rootReducer(state = initialState, action) {
         changeGrid: true
       });
     case UPDATE_GRID_CONTENT:
-      let newGrids = state.grids.map((grid) => {
+      let newGrids = state.gridsSet.grids.map((grid) => {
         if (grid.id == action.gridId) {
           grid = assignToEmpty(grid, {
             content: action.content
@@ -68,8 +68,10 @@ function rootReducer(state = initialState, action) {
         return grid
       })
 
+      let newGridsSet = assignToEmpty(state.gridsSet, {grids: newGrids})
+
       return assignToEmpty(state, {
-        grids: newGrids
+        gridsSet: newGridsSet
       })
 
     default:

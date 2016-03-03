@@ -21,12 +21,6 @@ class GridsPage extends Component {
       var editTransitionName = 'edit'
     }
 
-    /*
-
-
-
-     */
-
     return (
       <div className="page__grids">
         <header>
@@ -57,10 +51,6 @@ class GridsPage extends Component {
         <ImportGridsPopup {...this.props} />
       </div>
     )
-  }
-
-  componentWillMount() {
-    window.localStorage.getItem('gridsSet', (err, value) => console.log(value))
   }
 
   componentDidMount() {
