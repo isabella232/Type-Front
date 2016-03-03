@@ -15,26 +15,26 @@
     <!-- This is the initial data directed output from server -->
     <script>
       window.INITIAL = {
-        scanReducer: {
-          showInfo: false,
-          qrcodeText: '',
-          gridsSet: {}
-        },
-        gridsReducer: {
-          showPopup: false,
-          showEdit: false,
-          currentEditGridId: null,
-          changeGrid: false,
-          grids: [
-            /*
-            {
-              id: 0,
-              title: "今日纪录",
-              content: "上午请假陪 cc 去医院检查，最近她头晕的厉害。\n\n下午依旧去上班，打了新年来的第一次羽毛球。",
-              withImage: true
-            },
-            */
-          ]
+        // ScanPage
+        showInfo: false,
+        qrcodeText: '',
+
+        // GridsPage
+        showPopup: false,
+        showEdit: false,
+        currentEditGridId: null,
+        changeGrid: false,
+
+        // UserData
+        gridsSet: {
+          /*
+          {
+            id: 0,
+            title: "今日纪录",
+            content: "上午请假陪 cc 去医院检查，最近她头晕的厉害。\n\n下午依旧去上班，打了新年来的第一次羽毛球。",
+            withImage: true
+          },
+          */
         }
       }
     </script>
