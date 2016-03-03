@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 import { closeListSingleView, asyncUpdateGridContent } from '../../../actions/AppActions'
 
@@ -10,7 +9,7 @@ import Back from '../../../../img/back.png'
 import Prev from '../../../../img/prev.png'
 import Next from '../../../../img/next.png'
 
-class GridEdit extends Component {
+export default class GridEdit extends Component {
   backToList(e) {
     e.preventDefault()
     this.props.dispatch(closeListSingleView())
@@ -72,15 +71,3 @@ class GridEdit extends Component {
     }, 1)
   }
 }
-
-// REDUX STUFF
-
-// Which props do we want to inject, given the global state?
-function select(state) {
-  return {
-    data: state
-  }
-}
-
-// Wrap the component to inject dispatch and state into it
-export default connect(select)(GridEdit)

@@ -9,9 +9,9 @@ import GridEdit from '../parts/GridsPage/GridEdit.react.js'
 import ImportGridsButton from '../parts/GridsPage/ImportGridsButton.react.js'
 import ImportGridsPopup from '../parts/GridsPage/ImportGridsPopup.react.js'
 
-import Logo from '../../../img/logo-black.png'
+import Logo from '../../../img/logo.png'
 
-import leaveAlert from '../../utils/leaveAlert'
+import { leaveAlert } from '../../utils/helpFuncs'
 
 class GridsPage extends Component {
   render() {
@@ -28,7 +28,7 @@ class GridsPage extends Component {
             <img src={Logo} />
           </div>
           <h1>1989-11-20</h1>
-          <ImportGridsButton />
+          <ImportGridsButton {...this.props} />
         </header>
 
         <GridsList

@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 import { readyImportDiaries } from '../../../actions/AppActions'
 
-class ImportGridsButton extends Component {
+export default class ImportGridsButton extends Component {
   readyToImport(e) {
     e.preventDefault()
     this.props.dispatch(readyImportDiaries())
@@ -15,11 +14,3 @@ class ImportGridsButton extends Component {
     )
   }
 }
-
-function select(state) {
-  return {
-    data: state
-  }
-}
-
-export default connect(select)(ImportGridsButton)

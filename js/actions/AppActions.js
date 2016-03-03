@@ -28,6 +28,7 @@
 /* eslint-disable no-use-before-define */
 
 import {
+  GENERATE_SCAN_QRCODE,
   TOGGLE_SCAN_HELP_INFORMATION,
   HIDE_SCAN_HELP_INFORMATION,
   READY_IMPORT_DIARIES,
@@ -38,6 +39,7 @@ import {
   UPDATE_GRID_CONTENT
 } from '../constants/AppConstants'
 
+/*
 export function asyncChangeProjectName(name) {
   return (dispatch) => {
     // You can do async stuff here!
@@ -55,8 +57,13 @@ export function asyncChangeOwnerName(name) {
     return dispatch(changeOwnerName(name))
   }
 }
+*/
 
 // ScanPage
+export function generateScanQRCode() {
+  return { type: GENERATE_SCAN_QRCODE }
+}
+
 export function toggleScanHelpInformation() {
   return { type: TOGGLE_SCAN_HELP_INFORMATION }
 }

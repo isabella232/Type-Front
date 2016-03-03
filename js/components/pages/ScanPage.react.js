@@ -6,7 +6,7 @@ import ScanHelpButton from '../parts/ScanPage/ScanHelpButton.react'
 import ScanHelpInfomation from '../parts/ScanPage/ScanHelpInformation.react'
 import ScanQRCode from '../parts/ScanPage/ScanQRCode.react'
 
-import Logo from '../../../img/logo-white.png'
+import Logo from '../../../img/logo.png'
 
 class ScanPage extends Component {
   render() {
@@ -19,7 +19,7 @@ class ScanPage extends Component {
             <img src={Logo} />
           </div>
 
-          <ScanQRCode />
+          <ScanQRCode {...this.props} />
 
           <ScanHelpButton {...this.props} />
 
