@@ -16,7 +16,9 @@
     <script>
       window.INITIAL = {
         scanReducer: {
-          showInfo: false
+          showInfo: false,
+          qrcodeText: '',
+          gridsSet: {}
         },
         gridsReducer: {
           showPopup: false,
@@ -24,24 +26,14 @@
           currentEditGridId: null,
           changeGrid: false,
           grids: [
+            /*
             {
               id: 0,
               title: "今日纪录",
               content: "上午请假陪 cc 去医院检查，最近她头晕的厉害。\n\n下午依旧去上班，打了新年来的第一次羽毛球。",
               withImage: true
             },
-            {
-              id: 1,
-              title: "今天这个世界更美好了一些吗？",
-              content: "情人节",
-              withImage: true
-            },
-            {
-              id: 2,
-              title: "今天给我留下的印象最为深刻让我最为感动让我最为心碎的一件事，然后接下来是第二行，让我看一看能不能来个省略号",
-              content: "",
-              withImage: false
-            }
+            */
           ]
         }
       }

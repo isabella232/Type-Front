@@ -5,6 +5,7 @@
   "dependencies": {
     "faye": "^1.1.2",
     "history": "1.17.0",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-redux": "^4.0.0",

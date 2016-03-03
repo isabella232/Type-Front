@@ -10,6 +10,7 @@ import Logo from '../../../img/logo.png'
 
 class ScanPage extends Component {
   render() {
+    console.log(this.props.data)
     return (
       <div className="page__scan">
         <div className="video">

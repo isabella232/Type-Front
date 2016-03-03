@@ -60,14 +60,21 @@
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
+  padding: 8px;
+  background: $c-white;
+  border-radius: 8px;
+  margin: 0 auto; 
+  width: 256px;
+  height: 256px;
 }
 
 .page__scan .page__content .qrcode img {
   display: block;
-  margin: 0 auto 36px; 
 }
 
 .page__scan .page__content .qrcode strong {
+  display: block;
+  margin: 36px auto 0;
   font-weight: normal;
   font-size: $fs-title-small;
 }

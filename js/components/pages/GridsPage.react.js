@@ -56,6 +56,10 @@ class GridsPage extends Component {
     )
   }
 
+  componentWillMount() {
+    window.localStorage.getItem('gridsSet', (err, value) => console.log(value))
+  }
+
   componentDidMount() {
     leaveAlert()
   }

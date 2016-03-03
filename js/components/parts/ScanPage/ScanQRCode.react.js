@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Faye from 'faye'
+import fetch from 'isomorphic-fetch'
 
 import QRCode from  '../QRCode.react'
+import { generateScanQRCode,
+          asyncDataInit } from '../../../actions/AppActions'
 import { uuid } from '../../../utils/helpFuncs'
 import { FAYE_SERVER_URL } from '../../../utils/helpConsts'
 
@@ -9,7 +12,7 @@ export default class ScanQRCode extends Component {
   render() {
     return (
       <div className="qrcode">
-        <QRCode />
+        <QRCode text={this.props.data.scanReducer.qrcodeText} />
         <strong>Scan to start typing</strong>
       </div>
     )
@@ -20,19 +23,22 @@ export default class ScanQRCode extends Component {
     let client = new Faye.Client(FAYE_SERVER_URL, {retry: 5})
 
     client.on('transport:down', () => {
-      alert('faye down')
+      // dispatch the error message
     })
 
     client.on('transport:up', () => {
-      alert('faye up')
+      let qrcodeText = `GridDiary:Type:${window.location.origin}/diaries?channel=${channelID}`
+      console.log(qrcodeText)
+      this.props.dispatch(generateScanQRCode(qrcodeText))
     })
 
     let subscription = client.subscribe(`/${channelID}`, (message) => {
       let success = message.success
 
       if (success) {
-        alert('right')
+        this.props.dispatch(asyncDataInit(message.url))
       } else {
+        // dispatch the error message
         alert('wrong')
       }
     })

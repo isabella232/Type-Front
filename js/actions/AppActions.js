@@ -29,6 +29,7 @@
 
 import {
   GENERATE_SCAN_QRCODE,
+  DATA_INIT,
   TOGGLE_SCAN_HELP_INFORMATION,
   HIDE_SCAN_HELP_INFORMATION,
   READY_IMPORT_DIARIES,
@@ -39,29 +40,21 @@ import {
   UPDATE_GRID_CONTENT
 } from '../constants/AppConstants'
 
-/*
-export function asyncChangeProjectName(name) {
-  return (dispatch) => {
-    // You can do async stuff here!
-    // API fetching, Animations,...
-    // For more information as to how and why you would do this, check https://github.com/gaearon/redux-thunk
-    return dispatch(changeProjectName(name))
-  }
-}
-
-export function asyncChangeOwnerName(name) {
-  return (dispatch) => {
-    // You can do async stuff here!
-    // API fetching, Animations,...
-    // For more information as to how and why you would do this, check https://github.com/gaearon/redux-thunk
-    return dispatch(changeOwnerName(name))
-  }
-}
-*/
-
 // ScanPage
-export function generateScanQRCode() {
-  return { type: GENERATE_SCAN_QRCODE }
+export function generateScanQRCode(qrcodeText) {
+  return { type: GENERATE_SCAN_QRCODE, qrcodeText }
+}
+
+export function dataInit(gridsSet) {
+  return { type: DATA_INIT, gridsSet }
+}
+
+export function asyncDataInit(diaryURL) {
+  return (dispatch) => {
+    return fetch(diaryURL)
+      .then(response => response.json())
+      .then(json => dispatch(dataInit(json)))
+  }
 }
 
 export function toggleScanHelpInformation() {
