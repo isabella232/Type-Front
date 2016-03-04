@@ -37,7 +37,9 @@ import {
   OPEN_LIST_SINGLE_VIEW,
   CLOSE_LIST_SINGLE_VIEW,
   CHANGE_CURRENT_GRID,
-  UPDATE_GRID_CONTENT
+  UPDATE_GRID_CONTENT,
+  UPDATE_SERVER_DATA,
+  GENERATE_IMPORT_SCAN_QRCODE
 } from '../constants/AppConstants'
 
 // ScanPage
@@ -94,4 +96,23 @@ export function asyncUpdateGridContent(content, gridId) {
   return (dispatch) => {
     return dispatch(updateGridContent(content, gridId))
   }
+}
+
+export function updateServerData(diaryURL, gridsData) {
+  console.log(gridsData)
+  return (dispatch) => {
+    return fetch(diaryURL, {
+      method: 'patch',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(gridsData)
+    }).then(response => response.json())
+      .then(diary => dispatch(generateImportScanCode(diary)))
+  }
+}
+
+export function generateImportScanCode(importDiaryData) {
+  return { type: GENERATE_IMPORT_SCAN_QRCODE, importDiaryData }
 }

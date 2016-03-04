@@ -3,11 +3,13 @@ import { TOGGLE_SCAN_HELP_INFORMATION,
           GENERATE_SCAN_QRCODE,
           DATA_INIT,
           READY_IMPORT_DIARIES,
+          IMPORT_BUTTON_PROCESSING,
           CANCEL_IMPORT_DIARIES,
           OPEN_LIST_SINGLE_VIEW,
           CLOSE_LIST_SINGLE_VIEW,
           CHANGE_CURRENT_GRID,
-          UPDATE_GRID_CONTENT} from '../constants/AppConstants'
+          UPDATE_GRID_CONTENT,
+          GENERATE_IMPORT_SCAN_QRCODE } from '../constants/AppConstants'
 import assignToEmpty from '../utils/assign'
 
 var initialState = window.INITIAL
@@ -38,6 +40,10 @@ function rootReducer(state = initialState, action) {
     case READY_IMPORT_DIARIES:
       return assignToEmpty(state, {
         showPopup: true
+      });
+    case IMPORT_BUTTON_PROCESSING:
+      return assignToEmpty(state, {
+        importStatus: 'processing'
       });
     case CANCEL_IMPORT_DIARIES:
       return assignToEmpty(state, {
@@ -73,6 +79,10 @@ function rootReducer(state = initialState, action) {
 
       return assignToEmpty(state, {
         gridsSet: newGridsSet
+      })
+    case GENERATE_IMPORT_SCAN_QRCODE:
+      return assignToEmpty(state, {
+        importDiaryData: action.importDiaryData
       })
 
     default:

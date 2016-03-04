@@ -15,6 +15,8 @@ export default class ImportGridsPopup extends Component {
   }
 
   render() {
+    console.log(this.props.data)
+
     let show = this.props.data.showPopup ? 'mask--show' : ''
     let import_flag = true // TODO: import grids data
 
@@ -59,5 +61,8 @@ export default class ImportGridsPopup extends Component {
     } else {
       return import_failed
     }
+  }
+
+  componentDidMount() {
   }
 }
