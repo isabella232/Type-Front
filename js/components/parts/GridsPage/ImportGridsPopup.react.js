@@ -15,10 +15,7 @@ export default class ImportGridsPopup extends Component {
   }
 
   render() {
-    console.log(this.props.data)
-
     let show = this.props.data.showPopup ? 'mask--show' : ''
-    let import_flag = true // TODO: import grids data
 
     let import_success = (
       <div className={show + ' mask'}>
@@ -28,7 +25,7 @@ export default class ImportGridsPopup extends Component {
           <strong>Well done!</strong>
 
           <div className="qrcont">
-            <QRCode />
+            <QRCode text={this.props.data.importQRcodeText} />
           </div>
 
           <p>Scan to import diaries to App</p>
@@ -56,13 +53,10 @@ export default class ImportGridsPopup extends Component {
       </div>
     )
 
-    if (import_flag) {
+    if (this.props.data.importQRcodeText.length > 0) {
       return import_success
     } else {
       return import_failed
     }
-  }
-
-  componentDidMount() {
   }
 }

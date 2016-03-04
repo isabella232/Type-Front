@@ -82,7 +82,7 @@ function rootReducer(state = initialState, action) {
       })
     case GENERATE_IMPORT_SCAN_QRCODE:
       return assignToEmpty(state, {
-        importDiaryData: action.importDiaryData
+        importQRcodeText: action.importQRcodeText
       })
 
     default:

@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 /*
  * Actions change things in your application
  * Since this boilerplate uses a uni-directional data flow, specifically redux,
@@ -99,20 +101,22 @@ export function asyncUpdateGridContent(content, gridId) {
 }
 
 export function updateServerData(diaryURL, gridsData) {
-  console.log(gridsData)
   return (dispatch) => {
     return fetch(diaryURL, {
-      method: 'patch',
+      method: 'PATCH',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(gridsData)
-    }).then(response => response.json())
-      .then(diary => dispatch(generateImportScanCode(diary)))
+    })
+    .then(response => response.json())
+    .then(diary => dispatch(generateImportScanCode(diary)))
+    .then(() => dispatch(readyImportDiaries()))
   }
 }
 
 export function generateImportScanCode(importDiaryData) {
-  return { type: GENERATE_IMPORT_SCAN_QRCODE, importDiaryData }
+  let importQRcodeText = `GridDiary:Import:${importDiaryData.date}:${window.location.origin}/diaries/${importDiaryData.id}`
+  return { type: GENERATE_IMPORT_SCAN_QRCODE, importQRcodeText }
 }

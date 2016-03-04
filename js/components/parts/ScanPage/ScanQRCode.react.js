@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Faye from 'faye'
-import fetch from 'isomorphic-fetch'
 
 import QRCode from  '../QRCode.react'
 import { generateScanQRCode,
@@ -28,7 +27,6 @@ export default class ScanQRCode extends Component {
 
     client.on('transport:up', () => {
       let qrcodeText = `GridDiary:Type:${window.location.origin}/diaries?channel=${channelID}`
-      console.log(qrcodeText)
       this.props.dispatch(generateScanQRCode(qrcodeText))
     })
 
