@@ -1,0 +1,27 @@
+name: Publish to docker registry
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    if: "! contains(github.event.head_commit.message, 'chore: ')"
+    steps:
+      - run: echo "${{ github.event.head_commit.message }}"
+
+  publish:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: sumi-interactive/type-front/type-front
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          cache: true
